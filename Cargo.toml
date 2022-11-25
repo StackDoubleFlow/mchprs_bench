@@ -1,0 +1,18 @@
+[package]
+name = "mchprs_tests"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mchprs_core = { path = "../MCHPRS/crates/core/" }
+mchprs_blocks = { path = "../MCHPRS/crates/blocks/" }
+mchprs_save_data = { path = "../MCHPRS/crates/save_data/" }
+mchprs_world = { path = "../MCHPRS/crates/world/" }
+
+[patch.crates-io]
+hematite-nbt = { git = "https://github.com/StackDoubleFlow/hematite_nbt" }
+
+[profile.release]
+debug = true
