@@ -10,6 +10,7 @@ mchprs_core = { path = "../MCHPRS/crates/core/" }
 mchprs_blocks = { path = "../MCHPRS/crates/blocks/" }
 mchprs_save_data = { path = "../MCHPRS/crates/save_data/" }
 mchprs_world = { path = "../MCHPRS/crates/world/" }
+pretty_env_logger = "0.4"
 
 [patch.crates-io]
 hematite-nbt = { git = "https://github.com/StackDoubleFlow/hematite_nbt" }
