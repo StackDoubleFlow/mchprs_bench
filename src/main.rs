@@ -26,7 +26,7 @@ fn load_world(path: impl AsRef<Path>) -> PlotWorld {
 }
 
 fn main() {
-    pretty_env_logger::init();
+    tracing_subscriber::fmt::init();
 
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
