@@ -17,3 +17,4 @@ hematite-nbt = { git = "https://github.com/StackDoubleFlow/hematite_nbt" }
 
 [profile.release]
 debug = true
+lto = "fat"

@@ -9,13 +9,14 @@ const START_BUTTON: BlockPos = BlockPos::new(187, 99, 115);
 fn init_compiler(world: &mut PlotWorld) -> Compiler {
     let mut compiler: Compiler = Default::default();
 
-    let options = CompilerOptions::parse("-O");
+    let options = CompilerOptions::parse("-O -I");
 
     let compile_start = Instant::now();
-    compiler.compile(world, options, Vec::new());
+    let bounds = world.get_corners();
+    compiler.compile(world, bounds, options, Vec::new());
     println!("Compile completed in {:?}", compile_start.elapsed());
 
-    compiler.on_use_block(world, START_BUTTON);
+    compiler.on_use_block(START_BUTTON);
     compiler
 }
 
@@ -24,7 +25,7 @@ pub fn run() {
     let mut compiler = init_compiler(&mut world);
     let start = Instant::now();
     for _ in 0..12411975 {
-        compiler.tick(&mut world);
+        compiler.tick();
     }
     println!("Mandelbrot benchmark completed in {:?}", start.elapsed());
 }

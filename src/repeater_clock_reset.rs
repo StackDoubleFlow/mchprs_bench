@@ -9,12 +9,12 @@ pub fn run() {
     let mut compiler: Compiler = Default::default();
 
     let ticks = world.to_be_ticked.drain(..).collect();
-    dbg!(&ticks);
-    compiler.compile(&mut world, Default::default(), ticks);
+    let bounds = world.get_corners();
+    compiler.compile(&mut world, bounds, Default::default(), ticks);
 
-    compiler.tick(&mut world);
+    compiler.tick();
     compiler.flush(&mut world);
-    compiler.reset(&mut world);
+    compiler.reset(&mut world, bounds);
 
     let expected = vec![
         TickEntry {
