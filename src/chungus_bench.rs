@@ -13,7 +13,7 @@ fn init_compiler(world: &mut PlotWorld) -> Compiler {
 
     let compile_start = Instant::now();
     let bounds = world.get_corners();
-    compiler.compile(world, bounds, options, Vec::new());
+    compiler.compile(world, bounds, options, Vec::new(), Default::default());
     println!("Compile completed in {:?}", compile_start.elapsed());
 
     compiler.on_use_block(START_BUTTON);

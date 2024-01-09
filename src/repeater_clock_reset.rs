@@ -10,7 +10,13 @@ pub fn run() {
 
     let ticks = world.to_be_ticked.drain(..).collect();
     let bounds = world.get_corners();
-    compiler.compile(&mut world, bounds, Default::default(), ticks);
+    compiler.compile(
+        &mut world,
+        bounds,
+        Default::default(),
+        ticks,
+        Default::default(),
+    );
 
     compiler.tick();
     compiler.flush(&mut world);

@@ -1046,6 +1046,7 @@ dependencies = [
  "regex",
  "reqwest",
  "rusqlite",
+ "rustc-hash",
  "serde",
  "serde_json",
  "smallvec",
@@ -1059,6 +1060,7 @@ dependencies = [
 name = "mchprs_network"
 version = "0.1.0"
 dependencies = [
+ "bitvec",
  "byteorder",
  "flate2",
  "hematite-nbt",
@@ -1082,7 +1084,9 @@ dependencies = [
  "byteorder",
  "mchprs_blocks",
  "mchprs_world",
+ "rustc-hash",
  "serde",
+ "serde-big-array",
  "thiserror",
 ]
 
@@ -1686,6 +1690,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bb2f3770c8bce3bcda7e149193a069a0f4365bda1fa5cd88e03bca26afc1216c"
 dependencies = [
  "serde_derive",
+]
+
+[[package]]
+name = "serde-big-array"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "11fc7cc2c76d73e0f27ee52abbd64eec84d46f370c88371120433196934e4b7f"
+dependencies = [
+ "serde",
 ]
 
 [[package]]
